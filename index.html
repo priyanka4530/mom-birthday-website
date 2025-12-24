@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Happy Birthday Amma ❤️</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Dancing+Script:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- WELCOME PAGE -->
+<section class="welcome" id="welcome">
+    <h1 class="welcome-title">Happy Birthday Amma</h1>
+    <p>You are the heart of our family</p>
+    <button onclick="startSurprise()">Click Here 🎁</button>
+</section>
+
+<!-- ENVELOPE PAGE -->
+<section class="letter hidden" id="envelopes">
+    <div class="envelope-grid">
+        <div class="envelope" onclick="openLetter('letter1')">
+            <img src="assets/images/envelope.png">
+            <p>Letter 1</p>
+        </div>
+        <div class="envelope" onclick="openLetter('letter2')">
+            <img src="assets/images/envelope.png">
+            <p>Letter 2</p>
+        </div>
+        <div class="envelope" onclick="openLetter('letter3')">
+            <img src="assets/images/envelope.png">
+            <p>Letter 3</p>
+        </div>
+        <div class="envelope" onclick="openLetter('letter4')">
+            <img src="assets/images/envelope.png">
+            <p>Letter 4</p>
+        </div>
+    </div>
+</section>
+
+<!-- LETTER 1 -->
+<section class="letter hidden" id="letter1">
+    <div class="card">
+        <button class="back" onclick="goBack()">← Back</button>
+        <h2>Happy Birthday Amma ❤️</h2>
+        <p>Hope you like my surprise</p>
+    </div>
+</section>
+
+<!-- LETTER 2 -->
+<section class="letter hidden" id="letter2">
+    <div class="card">
+        <button class="back" onclick="goBack()">← Back</button>
+
+        <h2>Beautiful Memories 💐</h2>
+
+        <div class="slideshow">
+            <img id="slideImage" src="assets/images/img1.jpeg">
+        </div>
+
+        <p class="love-text">I LOVE YOU AMMA ❤️</p>
+    </div>
+</section>
+
+<!-- LETTER 3 -->
+<section class="letter hidden" id="letter3">
+    <div class="card">
+        <button class="back" onclick="goBack()">← Back</button>
+
+        <h2>From My Heart 💌</h2>
+
+        <p class="mixed-note">
+            <strong>Happy Birthday Amma! ❤️</strong><br><br>
+
+            నన్ను ఇంతగా చూసుకున్నందుకు, ఇంత ప్రేమగా కేర్ చేసినందుకు thank you.<br><br>
+
+            ఎన్నో సంవత్సరాలు, ఎన్నో కష్టాలు వచ్చినా…<br>
+            నన్ను, నాన్న, అక్కను నువ్వు ఎంతో ప్రేమతో, ఎంతో బాధ్యతగా <strong>పెంచారు</strong>.<br><br>
+
+            Today I promise<br>
+            మేము నిన్ను అంతే ప్రేమగా, అంతే జాగ్రత్తగా చూసుకుంటాము.<br><br>
+
+            I love you so much amma ❤️<br>
+            ఈ చిన్న సర్‌ప్రైజ్ నీకు నచ్చిందని ఆశిస్తున్నాను.
+        </p>
+    </div>
+</section>
+
+<!-- LETTER 4 -->
+<section class="letter hidden" id="letter4">
+    <div class="card final">
+        <h1 class="final-text">I LOVE YOU AMMA ❤️</h1>
+        <div id="hearts"></div>
+    </div>
+</section>
+
+<!-- CONTINUOUS BACKGROUND MUSIC -->
+<audio id="bgMusic" src="assets/music/birthday.mp3" loop></audio>
+
+<script src="script.js"></script>
+</body>
+</html>
