@@ -19,8 +19,15 @@ body {
 }
 
 .welcome-title {
-    font-family: 'Pacifico', cursive;
+    font-family: 'Montserrat', sans-serif;
     font-size: 3.5rem;
+    color: #c2185b;
+}
+
+/* ONLY AMMA FONT (WELCOME ONLY) */
+.amma-font {
+    font-family: 'Dancing Script', cursive;
+    font-size: 4rem;
     color: #c2185b;
 }
 
@@ -86,7 +93,7 @@ button {
     width: 200px;
 }
 
-/* BIG SLIDESHOW WITH FADE */
+/* SLIDESHOW */
 .slideshow {
     width: 80vw;
     max-width: 700px;
