@@ -1,4 +1,5 @@
-/* 🎵 MUSIC PLAYLIST */
+/* ================= MUSIC PLAYLIST ================= */
+
 const playlist = [
     "assets/music/birthday1.mp3",
     "assets/music/birthday2.mp3",
@@ -7,24 +8,31 @@ const playlist = [
 
 let currentSong = 0;
 const music = document.getElementById("bgMusic");
-music.volume = 0.6;
 
+music.preload = "auto";
+music.volume = 0.7;
+music.src = playlist[currentSong];
+
+// play next song automatically
 music.addEventListener("ended", () => {
     currentSong = (currentSong + 1) % playlist.length;
     music.src = playlist[currentSong];
     music.play();
 });
 
-/* START EXPERIENCE */
+/* ================= START EXPERIENCE ================= */
+
 function startSurprise() {
-    music.src = playlist[currentSong];
-    music.play();
+    music.play().catch(err => {
+        console.log("Playback blocked:", err);
+    });
 
     document.getElementById("welcome").classList.add("hidden");
     document.getElementById("envelopes").classList.remove("hidden");
 }
 
-/* OPEN LETTER */
+/* ================= OPEN LETTER ================= */
+
 function openLetter(letterId) {
     document.getElementById("envelopes").classList.add("hidden");
     document.getElementById(letterId).classList.remove("hidden");
@@ -33,13 +41,15 @@ function openLetter(letterId) {
     if (letterId === "letter4") startHearts();
 }
 
-/* BACK */
+/* ================= BACK ================= */
+
 function goBack() {
     document.querySelectorAll(".letter").forEach(l => l.classList.add("hidden"));
     document.getElementById("envelopes").classList.remove("hidden");
 }
 
-/* SLIDESHOW */
+/* ================= SLIDESHOW ================= */
+
 let images = Array.from({ length: 15 }, (_, i) => `assets/images/img${i + 1}.jpeg`);
 let index = 0;
 let slideshowInterval;
@@ -59,7 +69,8 @@ function startSlideshow() {
     }, 2500);
 }
 
-/* HEARTS */
+/* ================= HEARTS ================= */
+
 function startHearts() {
     setInterval(() => {
         let heart = document.createElement("span");
