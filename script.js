@@ -1,7 +1,23 @@
+/* 🎵 MUSIC PLAYLIST */
+const playlist = [
+    "assets/music/birthday1.mp3",
+    "assets/music/birthday2.mp3",
+    "assets/music/birthday3.mp3"
+];
+
+let currentSong = 0;
+const music = document.getElementById("bgMusic");
+music.volume = 0.6;
+
+music.addEventListener("ended", () => {
+    currentSong = (currentSong + 1) % playlist.length;
+    music.src = playlist[currentSong];
+    music.play();
+});
+
 /* START EXPERIENCE */
 function startSurprise() {
-    const music = document.getElementById("bgMusic");
-    music.volume = 0.6;
+    music.src = playlist[currentSong];
     music.play();
 
     document.getElementById("welcome").classList.add("hidden");
@@ -17,13 +33,13 @@ function openLetter(letterId) {
     if (letterId === "letter4") startHearts();
 }
 
-/* BACK TO ENVELOPES */
+/* BACK */
 function goBack() {
     document.querySelectorAll(".letter").forEach(l => l.classList.add("hidden"));
     document.getElementById("envelopes").classList.remove("hidden");
 }
 
-/* SLIDESHOW WITH FADE (15 IMAGES) */
+/* SLIDESHOW */
 let images = Array.from({ length: 15 }, (_, i) => `assets/images/img${i + 1}.jpeg`);
 let index = 0;
 let slideshowInterval;
@@ -43,7 +59,7 @@ function startSlideshow() {
     }, 2500);
 }
 
-/* HEARTS ANIMATION */
+/* HEARTS */
 function startHearts() {
     setInterval(() => {
         let heart = document.createElement("span");
