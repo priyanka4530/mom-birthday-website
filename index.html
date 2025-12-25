@@ -13,7 +13,9 @@
 
 <!-- WELCOME PAGE -->
 <section class="welcome" id="welcome">
-    <h1 class="welcome-title">Happy Birthday Amma</h1>
+    <h1 class="welcome-title">
+        Happy Birthday <span class="amma-font">Amma</span>
+    </h1>
     <p>You are the heart of our family</p>
     <button onclick="startSurprise()">Click Here 🎁</button>
 </section>
@@ -21,6 +23,7 @@
 <!-- ENVELOPE PAGE -->
 <section class="letter hidden" id="envelopes">
     <div class="envelope-grid">
+
         <div class="envelope" onclick="openLetter('letter1')">
             <img src="assets/images/envelope.png">
             <p>Letter 1</p>
@@ -91,13 +94,14 @@
 <!-- LETTER 4 -->
 <section class="letter hidden" id="letter4">
     <div class="card final">
+        <button class="back" onclick="goBack()">← Back</button>
         <h1 class="final-text">I LOVE YOU AMMA ❤️</h1>
         <div id="hearts"></div>
     </div>
 </section>
 
-<!-- CONTINUOUS BACKGROUND MUSIC -->
-<audio id="bgMusic" src="assets/music/birthday.mp3" loop></audio>
+<!-- BACKGROUND MUSIC -->
+<audio id="bgMusic"></audio>
 
 <script src="script.js"></script>
 </body>
